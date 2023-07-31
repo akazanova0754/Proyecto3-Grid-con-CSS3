@@ -1,0 +1,250 @@
+/* ESTILOS GENERALES */
+*{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    outline: none;
+}
+#container{
+    width: 90%;
+    min-width: 310px;
+    margin: 40px auto;
+    
+    box-shadow: 0 0 15px #ccc;
+}
+#header{
+    border: 1px solid rgb(235, 235, 235); 
+    width: 100%; min-height: 120px;
+
+    display: grid;
+    grid-template-columns: 1fr 50%;
+    align-items: center;
+
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between; */
+
+
+}
+.logo{
+    display: flex;
+    flex-grow: 2;
+    justify-content: start;
+    align-items: center;
+    width: auto;
+    padding: 10px;
+    margin-left: 25px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Helvetica;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 35px;
+    text-shadow: 1px 1px 0 #ccc;
+}
+.logo h1{
+    font-size: 35px;
+}
+#menu{  
+    flex-grow: 1;
+}
+#menu ul{
+    width: 100%; height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+#menu ul li a {
+    text-transform: uppercase;
+    color: #444;
+    text-align: center;
+    display: block;
+    padding: 15px 20px;
+    transition:all 300ms
+}
+#menu ul li a:hover{
+    background: #ccc;
+    color: white;
+}
+
+#contenido{
+    
+    /* display: flex;
+    justify-content: center;
+    flex-wrap: wrap; */
+
+    display: grid;
+    
+    grid-template-columns: 250px 1fr;
+    
+
+}
+#aside{
+    /* width: 18%; */
+    min-width: 250px;
+   
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    
+    display: grid;
+    grid-template-rows: 70px 320px 1fr;
+    justify-content: center;
+
+}
+#aside h2{
+    color: #444444;
+    font-weight: 100;
+    text-align: center;
+    font-size: 19px;
+    
+    border-bottom: 1px solid rgb(235, 235, 235); 
+    margin-top: 35px;
+    padding-bottom: 10px;
+}
+#aside ul{
+    /* background: green; */
+    list-style: none;
+}
+#aside ul li{
+    background: #EEEEEE;
+    box-shadow:0 0 4px 1px #ccc;
+    margin-top: 20px;
+}
+#aside ul li a{
+    text-transform: uppercase;
+    color: #444;
+    text-align: center;
+    display: block;
+    padding: 20px 0;
+}
+#proyectos{
+    flex: 1;
+    /* width: 82%; */
+    box-sizing: border-box;
+    
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    grid-gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px 10px;
+}
+#proyectos .proyecto{
+    /* margin-right: 5px;
+    margin-top: 20px; */
+    
+    flex-basis: 250px;
+    display: flex;
+    flex-direction: column;
+    
+    box-shadow: 0px 0px 0 1px #ccc;
+    height: 240px;
+}
+.proyecto .info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+.proyecto .info a{
+    color: #444;
+}
+.proyecto .info p{
+    color: #ccc;
+}
+
+/* FOOTER */
+#footer{
+    width: 100%;
+    
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; */
+    
+    display: grid;
+    grid-template-columns: 250px 1fr 270px;
+
+
+    border-top: 1px solid rgba(225, 225, 226, 0.8);
+    min-height: 120px;
+    padding: 0 25px;
+    box-sizing: border-box;
+    
+}
+#footer .logo{
+    margin: 0;
+    margin-right: 15px;
+    /* display: flex;
+    justify-content: center; */
+    display: grid;
+    align-items: center;
+
+    opacity: 0.5;
+    flex-grow: unset;
+    /* background: blue; */
+    cursor: pointer;
+    min-width: 250px
+}
+#footer .info{
+    text-align: right;
+    /* background: red; */
+    grid-column: 3/4;
+    display: grid;
+    align-items: center;
+}
+#footer .info span{
+    display: flex;
+    justify-content: center;
+    min-width: 270px
+}
+
+
+
+/* MEDIA QUERYS */
+
+@media (max-width:1000px) {
+    
+    #header{
+        grid-template-columns: 1fr  ;
+        grid-template-rows: repeat(2, 1fr);
+    
+    }
+}
+@media (max-width:600px) {
+    #header .logo{
+        margin-left: 0;
+    }
+    #contenido{
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 1fr;
+    }
+    #aside{
+        grid-template-rows: 70px 320px;
+        align-items: flex-start;
+    }
+    #footer{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .logo{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        justify-content: center;
+    }
+    #footer .info{
+        grid-row: 2/3;
+        grid-column: 1/2;
+        justify-content: center;
+    }
+}
